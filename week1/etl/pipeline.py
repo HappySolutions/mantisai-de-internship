@@ -3,7 +3,7 @@ import csv
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(actime)s - %(levelname)s - %(message)s",
+    format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler("logs/etl.log"),
         logging.StreamHandler()
