@@ -31,9 +31,11 @@ class CsvETLPipeline:
     def transform(self, data):
         logging.info("Starting transformation")
         clean_rows = []
+        seen = set()
         for row in data:
-            age = row["age"]
-            if age.isdigit():
+            key = (row["name"], row["age"])
+            if key not in seen and row["age"].isdigit():
+                seen.add(key)
                 clean_rows.append(row)
         logging.info(f"Records after transform: len{(clean_rows)}")
         return clean_rows
