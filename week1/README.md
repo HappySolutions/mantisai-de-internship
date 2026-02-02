@@ -19,3 +19,7 @@ python etl\pipeline.py
 ### How to test
 
 pytest
+
+### Scheduling
+
+The ETL pipeline is scheduled to run daily using Windows Task Scheduler.
